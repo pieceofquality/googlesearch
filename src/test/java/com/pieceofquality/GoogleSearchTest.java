@@ -18,17 +18,17 @@ import static org.junit.Assert.assertEquals;
 public class GoogleSearchTest {
 
     @Test
-    public void googleSearch(){
+    public void searchAndFollowLink(){
 
         open("http://google.com/ncr");
 
         $(By.name("q")).setValue("Selenium automates browsers").pressEnter();
-        googleSearchResults.shouldHaveSize(10);
-        googleSearchResults.get(0).shouldHave(text("Selenium automates browsers")).$(".r>a").click();
+        results.shouldHaveSize(10);
+        results.get(0).shouldHave(text("Selenium automates browsers")).$(".r>a").click();
         $("#header>h1>a").shouldHave(exactText("Browser Automation"));
         assertEquals("http://www.seleniumhq.org/", url());
     }
 
-    ElementsCollection googleSearchResults = $$(".srg>.g");
+    ElementsCollection results = $$(".srg>.g");
 
 }
