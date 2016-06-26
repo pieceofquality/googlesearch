@@ -18,7 +18,7 @@ import static org.junit.Assert.assertEquals;
 public class GoogleSearchTest {
 
     @Test
-    public void searchAndFollowLink(){
+    public void testSearchAndFollowLink(){
 
         open("http://google.com/ncr");
 
